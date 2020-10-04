@@ -72,6 +72,10 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             //Death
+
+            if (collision.GetComponent<ArrowEnemy>() != null && collision.GetComponent<ArrowEnemy>().good)
+                return;
+
             StartCoroutine("DeathAnimation");
 
         }
